@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!--Flash messages used in Devise #MDM-->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
   <div>
     <%= link_to('All Addresses',   addresses_path ) %> |
     <%= link_to('All Orders',      orders_path ) %> | 

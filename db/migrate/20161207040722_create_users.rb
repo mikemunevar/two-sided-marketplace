@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :admin
       t.integer :address_id
       t.integer :store_id
+      t.integer :order_id
 
       t.timestamps null: false
     end

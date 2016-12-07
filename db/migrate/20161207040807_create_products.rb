@@ -5,6 +5,9 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :price
       t.integer :image_id
 
+      t.integer :store_id
+      t.integer :order_id
+
       t.timestamps null: false
     end
   end
