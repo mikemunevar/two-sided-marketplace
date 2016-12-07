@@ -20,7 +20,7 @@
     <%= link_to('All Users',       users_path ) %> |
     
     <% if signed_in? %>
-        Welcome <%= current_user.email %>
+        Welcome <%= current_user.email %> | 
         <%= link_to("SIGN OUT",      destroy_user_session_path, method: :delete) %>
         
     <% else %>
