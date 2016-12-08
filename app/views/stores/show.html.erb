@@ -8,12 +8,20 @@
 <p>
   <strong>Address:</strong>
   <%= @store.address_id %>
+  <!--Doesn't work, you have to loop through it because it's a one to many relationship -->
+  <%#= @store.address.name %>
+  <% @store.addresses.each do |address| %>
+    <%= address.name %>, <%= address.city %>
+  <% end %>
+  
 </p>
 
 <h2>Products</h2>
 <p>
-  xxxxxxxxx  LIST OF PRODUCTS HERE
-  xxxxxxxxx
+  <% @store.products.each do |product| %>
+    <p><%= link_to product.name, product %>: <%= number_to_currency(product.price) %> </p>
+  <% end %>
+  
 </p>
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
