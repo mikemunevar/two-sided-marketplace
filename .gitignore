@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+# I added these files
+
+# Ignore all the images that I uplaoded:
+/public/system

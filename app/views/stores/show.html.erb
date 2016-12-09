@@ -19,7 +19,7 @@
 <h2>Products</h2>
 <p>
   <% @store.products.each do |product| %>
-    <p><%= link_to product.name, product %>: <%= number_to_currency(product.price) %> </p>
+    <p><%= image_tag(product.image(:thumb)) %> <%= link_to product.name, product %>: <%= number_to_currency(product.price) %> </p>
   <% end %>
   
 </p>
