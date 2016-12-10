@@ -13,24 +13,38 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   
-  <div>
-    <%= link_to('All Addresses',   addresses_path ) %> |
-    <%= link_to('All Orders',      orders_path ) %> | 
-    <%= link_to('All Products',    products_path ) %> | 
-    <%= link_to('All Stores',      stores_path ) %> | 
-    <%= link_to('All Users',       users_path ) %> |
-    
-    <% if signed_in? %>
-        Welcome <%= current_user.email %> | 
-        <%= link_to("SIGN OUT",      destroy_user_session_path, method: :delete) %>
-        
-    <% else %>
-        <%= link_to("SIGN IN",        new_user_session_path) %> |
-        <%= link_to("SIGN UP",        new_user_registration_path) %>
-    <% end %>
-  </div>
+    <div class="header">
+      <div class="pure-menu pure-menu-horizontal">
+          <a class="pure-menu-heading" href="">Two-sided Marketplace</a>
 
-<%= yield %>
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href=<%= addresses_path %> class="pure-menu-link">Addresses</a></li>
+              <li class="pure-menu-item"><a href=<%= orders_path %> class="pure-menu-link">Orders</a></li>
+              <li class="pure-menu-item"><a href=<%= products_path %> class="pure-menu-link">Products</a></li>
+              <li class="pure-menu-item"><a href=<%= stores_path %> class="pure-menu-link">Stores</a></li>
+              <li class="pure-menu-item"><a href=<%= users_path %> class="pure-menu-link">Users</a></li>
+              
+                <% if signed_in? %>
+                  Welcome <%= current_user.email %>
+                  <%#= link_to("SIGN OUT",      destroy_user_session_path, method: :delete) %>
+                   <li class="pure-menu-item"><%= link_to("SIGN OUT", destroy_user_session_path, method: :delete, class: "pure-menu-link") %></li>
+
+                <% else %>
+                  <%#= link_to("SIGN IN",        new_user_session_path) %>
+                  <li class="pure-menu-item"><%= link_to("SIGN IN", new_user_session_path, class: "pure-menu-link") %></li>
+                  <%#= link_to("SIGN UP",        new_user_registration_path) %>
+                  <li class="pure-menu-item"><%= link_to("SIGN UP", new_user_registration_path, class: "pure-menu-link") %></li>
+                <% end %>
+                
+
+          </ul>
+      </div>
+      
+  </div>
+  
+
+
+  <%= yield %>
 
 </body>
 </html>
