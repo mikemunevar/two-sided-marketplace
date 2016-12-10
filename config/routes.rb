@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :orders
   resources :products
-  resources :stores
+  resources :stores do
+      # get('show2', on: :collection)
+  end
+  
   resources :addresses
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

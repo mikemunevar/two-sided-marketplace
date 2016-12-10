@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @store.name %>
+</p>
+xxxx SHOW2  XXXXX
+
+<p>
+  <strong>Address:</strong>
+  <%= @store.address_id %>
+  <!--Doesn't work, you have to loop through it because it's a one to many relationship -->
+  <%#= @store.address.name %>
+  <% @store.addresses.each do |address| %>
+    <%= address.name %>, <%= address.city %>
+  <% end %>
+  
+</p>
+
+<h2>Products</h2>
+<p>
+  <% @store.products.each do |product| %>
+    <p><%= image_tag(product.image(:thumb)) %> <%= link_to product.name, product %>: <%= number_to_currency(product.price) %> </p>
+  <% end %>
+  
+</p>
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>

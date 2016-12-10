@@ -11,6 +11,9 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
   end
+  
+  def show2
+  end
 
   # GET /stores/new
   def new

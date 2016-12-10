@@ -4,8 +4,10 @@ class Product < ActiveRecord::Base
     # has_many   :images
     
     has_attached_file(  :image, 
-                        :styles => { :medium => "300x300>",
-                                        :thumb => "100x100>" },
+                        :styles => {    :xlarge =>  "700x700>",
+                                        :large =>   "500x500>",
+                                        :medium =>  "300x300>",
+                                        :thumb =>   "100x100>" },
                         # :default_url =>"/images/:style/missing.png"
                         )
                         
