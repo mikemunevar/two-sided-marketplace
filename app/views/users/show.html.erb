@@ -12,7 +12,12 @@
 
 <p>
   <strong>Address:</strong>
-  <%= @user.address_id %>
+
+  <% @user.addresses.each do |address| %>
+    <%= address.name %>, <%= address.city %>
+  <% end %>
+  (<%= @user.address_id %>)
+
 </p>
 
 <p>

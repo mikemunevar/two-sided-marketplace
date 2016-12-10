@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Users</h1>
-
+  
 <table>
   <thead>
     <tr>
@@ -13,12 +13,19 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.admin %></td>
-        <td><%= user.address_id %></td>
+        <td><%= user.address_id %> 
+        
+        <%# @users.each do |address| %>
+          <%#= user.address.name %> 
+        <%# end %>
+        
+        </td>
         <td><%= user.store_id %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
