@@ -27,7 +27,7 @@ class StoresController < ApplicationController
   # POST /stores
   # POST /stores.json
   def create
-    @store = Store.new(store_params)
+    @store = Store.new(store_params, author_ids: [] )
 
     respond_to do |format|
       if @store.save
@@ -72,6 +72,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:name, :address_id, :user_id, :product_id, :order_id )
+      params.require(:store).permit(:name, :address_id, :product_id, :order_id, user_ids: [] )
     end
 end

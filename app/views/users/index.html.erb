@@ -8,7 +8,7 @@
       <th>First name</th>
       <th>Admin</th>
       <th>Address</th>
-      <th>Store</th>
+      <th>Stores</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,14 +19,13 @@
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.admin %></td>
-        <td><%= user.address_id %> 
-        
+        <td><%= user.address_id %> </td>
         <%# @users.each do |address| %>
           <%#= user.address.name %> 
         <%# end %>
-        
+        <td><%= render user.stores %>
         </td>
-        <td><%= user.store_id %></td>
+
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%#= link_to 'New User', new_user_path %>
+<%= link_to 'New User Registration', new_user_registration_path %>
+
